@@ -1,1 +1,117 @@
+Bonjour et bienvenue à cette conférence sur les étiquettes et les sélecteurs.
+Mon nom est Mumshad Mannambeth.
+Que savons-nous déjà des étiquettes et des sélecteurs ?
+Les étiquettes et les sélecteurs sont une méthode standard
+pour regrouper des éléments.
+Supposons que vous ayez un ensemble d'espèces différentes
+et que l'utilisateur veuille pouvoir les filtrer
+en fonction de différents critères,
+par exemple en fonction de leur classe ou de leur type (domestique
+ou sauvage), ou encore en fonction de leur
+couleur.
+Et pas seulement par groupe, vous voulez pouvoir
+les filtrer sur la base d'un
+critère tel que tous les animaux verts
+ou avec des critères multiples tels que tout ce qui est vert
+et qui est aussi un oiseau.
+Quelle que soit cette classification, vous
+devez pouvoir regrouper les éléments et les filtrer
+en fonction de vos besoins, et le meilleur moyen d'y
+parvenir est d'utiliser des étiquettes.
+Les étiquettes sont des propriétés attachées à chaque élément.
+Vous ajoutez donc des propriétés à chaque élément
+pour sa classe, son type et sa couleur.
+Les sélecteurs vous aident à filtrer ces éléments.
+Par exemple, lorsque vous dites que la classe est un mammifère, vous obtenez
+une liste de mammifères, et lorsque
+vous dites que la couleur est un vert, vous obtenez
+les mammifères verts.
+Nous voyons des étiquettes dans les sélecteurs utilisés
+partout, comme les mots-clés que vous marquez sur les vidéos YouTube
+ou les blogs qui aident les utilisateurs à filtrer et à trouver le bon contenu.
+Nous voyons des étiquettes ajoutées aux articles dans une boutique en
+ligne qui vous aident à ajouter différents types de filtres pour
+visualiser vos produits.
+Alors, comment les étiquettes et les sélecteurs sont-ils utilisés dans Kubernetes ?
+Nous avons créé beaucoup de types d'objets différents
+dans Kubernetes, des
+pods, des services, des ensembles de répliques, des déploiements, etc.
+Pour Kubernetes, tous ces objets sont différents.
+Au fil du temps, vous pouvez finir par
+avoir des centaines ou des milliers de ces objets dans votre cluster.
+Vous aurez ensuite besoin d'un moyen
+de filtrer et d'afficher différents objets selon différentes catégories,
+par exemple pour regrouper les objets selon leur type ou
+afficher les objets par application ou par
+leur fonctionnalité.
+Quoi qu'il en soit, vous pouvez regrouper et sélectionner des objets
+à l'aide d'étiquettes et de sélecteurs.
+Pour chaque objet, apposez des étiquettes en fonction de vos
+besoins, comme app, fonction, etc.
+Ensuite, tout en sélectionnant, spécifiez une condition
+pour filtrer des objets spécifiques.
+Par exemple, l'application est égale à l'application 1.
+Alors comment spécifier les étiquettes dans Kubernetes ?
+Dans un fichier de définition de pod, sous métadonnées,
+créez une section appelée étiquettes.
+Sous cela, ajoutez les étiquettes dans un format clé-valeur comme ceci.
+Vous pouvez ajouter autant d'étiquettes que vous le souhaitez.
+Une fois le pod créé, pour sélectionner
+le pod avec les étiquettes, utilisez
+la commande cube control get pods avec
+l'option selector et spécifiez
+la condition comme app equals app one.
+Il s'agit là d'un cas d'utilisation des étiquettes et des sélecteurs.
+Les objets Kubernetes utilisent des étiquettes et des sélecteurs en interne pour
+connecter différents objets entre eux.
+Par exemple, pour créer un ensemble de répliques
+composé de trois pods différents, nous commençons
+par étiqueter la définition du pod et utilisons le sélecteur dans un ensemble
+de répliques pour regrouper les pods.
+Dans un fichier de définition d'ensemble de répliques,
+vous verrez des étiquettes définies à deux endroits.
+Notez que c'est un domaine où les
+débutants ont tendance à faire une erreur.
+Les étiquettes définies dans la section modèle
+sont les étiquettes configurées sur les pods.
+Les étiquettes que vous voyez en haut sont
+les étiquettes de l'ensemble de répliques lui-même.
+Nous ne sommes pas vraiment concernés par les étiquettes
+de l'ensemble de répliques pour le moment,
+car nous essayons de faire en sorte que l'ensemble
+de répliques découvre le pod.
+Les étiquettes de l'ensemble de répliques seront
+utilisées si vous deviez configurer un autre objet
+pour découvrir l'ensemble de répliques.
+Afin de connecter l'ensemble de répliques au pod, nous configurons
+le champ sélecteur sous la spécification
+de l'ensemble de répliques pour correspondre
+aux étiquettes définies sur le pod.
+Une seule étiquette fera l'affaire si elle correspond correctement.
+Cependant, si vous pensez qu'il peut y avoir d'autres
+pods avec la même étiquette mais avec une fonction différente,
+alors vous pouvez spécifier les deux étiquettes pour vous
+assurer que les bonnes parties sont découvertes par l'ensemble
+de répliques.
+Lors de la création, si les étiquettes correspondent,
+l'ensemble de répliques est créé avec succès.
+Cela fonctionne de la même manière pour d'autres objets comme un service.
+Lorsqu'un service est créé, il
+utilise le sélecteur défini dans le fichier de définition du service pour correspondre
+aux étiquettes définies sur les pods dans le fichier
+de définition de l'ensemble de répliques.
+Enfin, examinons les annotations.
+Alors que les étiquettes et les sélecteurs sont
+utilisés pour regrouper et sélectionner des objets,
+les annotations sont utilisées pour enregistrer d'autres
+détails à des fins informatives.
+Par exemple, les détails de l'outil tels que le nom, la version, les informations
+de construction, etc., ou les détails
+de contact, les numéros de téléphone, les identifiants de courriel, etc.
+qui peuvent être utilisés à des fins d'intégration.
+Voilà, c'est tout pour cette conférence
+sur les étiquettes, les sélecteurs et les annotations.
+Rendez-vous à la section des exercices de codage et
+entraînez-vous à travailler avec des étiquettes et des sélecteurs.
+
 
