@@ -1,6 +1,6 @@
 Bonjour et bienvenue à cette conférence sur les étiquettes et les sélecteurs.
 Mon nom est Mumshad Mannambeth.
-Que savons-nous déjà des étiquettes et des sélecteurs ?
+Que savons nous déjà des étiquettes et des sélecteurs ?
 Les étiquettes et les sélecteurs sont une méthode standard
 pour regrouper des éléments.
 Supposons que vous ayez un ensemble d'espèces différentes
