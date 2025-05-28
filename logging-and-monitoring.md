@@ -137,9 +137,6 @@ Ces outils sont fondamentaux pour organiser, sélectionner et gérer les ressour
 
 Ces scénarios illustrent l'utilisation des labels et selectors pour une gestion efficace du logging et du monitoring dans Kubernetes.
 
-
-Très bien. Poursuivons avec la **deuxième grande notion** : **Taints and Tolerations**, dans le cadre du logging et du monitoring en environnement Kubernetes, niveau **CKA**, avec explications claires, scénarios concrets et solutions via commandes Kubernetes.
-
 ---
 
 # 🧪 **Taints and Tolerations**
@@ -289,7 +286,7 @@ kubectl taint nodes node-log logcollect=true:PreferNoSchedule
 
 ---
 
-Poursuivons avec la **troisième grande notion** :
+
 
 # 🧩 **Node Selectors**
 
@@ -440,7 +437,7 @@ Dans le contexte du **logging** et du **monitoring**, cette fonctionnalité est 
 
 ---
 
-Poursuivons avec la **quatrième grande notion** :
+
 
 ---
 
@@ -615,9 +612,7 @@ affinity:
 * Combinez `nodeSelector`, `taints`, et `affinity` pour une orchestration fine.
 * Pensez **“résilience d’infrastructure monitoring”** : vos pods doivent pouvoir se relocaliser si nécessaire.
 
----
 
-Très bien, poursuivons avec la **cinquième grande notion**, essentielle pour la collecte de logs et de métriques dans Kubernetes :
 
 ---
 
@@ -786,7 +781,7 @@ containers:
 
 ---
 
-Poursuivons avec la **sixième grande notion** dans le cadre du *logging and monitoring* de Kubernetes à un niveau **CKA**, à savoir :
+
 
 ---
 
@@ -944,7 +939,7 @@ crictl logs <container-id>
 
 ---
 
-Poursuivons avec la **septième grande notion** dans le cadre du *Logging and Monitoring* Kubernetes à un niveau **CKA**, à savoir :
+
 
 ---
 
@@ -1113,7 +1108,7 @@ command:
 
 ---
 
-Poursuivons avec la **dernière grande notion** dans notre cours Kubernetes Logging & Monitoring niveau CKA :
+
 
 ---
 
